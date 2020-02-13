@@ -1,11 +1,10 @@
 import pystan
 import pickle
 
-#These file should be run before using the class Neal_NN as it initializes the models
-#Used with Stan and pikels than to a repository so that they can be unpikeled when
-#the class is initialized thus saving time
+#These file should be run before using the class Neal_NN as it initializes the models used by Stan
+# and pikels them to a directory so that they can be unpikeled when the class is initialized thus saving time
 
-directory=r'C:\Users\Franz Liszt\Miniconda3\envs\Bayesian_project\Lib\site-packages'
+directory=r'your directory'
 
 model = """
 data{
@@ -375,11 +374,11 @@ generated quantities
 
 # run these lines once to create the models
 sm = pystan.StanModel(model_code=model)
-with open(directory+'model.pkl', 'wb') as f:
+with open(directory+r'\\'+'model.pkl', 'wb') as f:
     pickle.dump(sm, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 sm = pystan.StanModel(model_code=model_uncentered)
-with open(directory+'model.pkl', 'wb') as f:
+with open(directory+r'\\'+'model_uncentered.pkl', 'wb') as f:
     pickle.dump(sm, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
