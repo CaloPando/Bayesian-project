@@ -10,8 +10,8 @@ from matplotlib import rcParams
 To produce the animation you need to download ffmpeg at https://www.ffmpeg.org/download.html, than write here the directory 
 where ffmpeg.exe is located, also write the directory where you want the animation to be saved
 '''
-directory_ffmpeg=r'C:\Users\Franz Liszt\Miniconda3\pkgs\ffmpeg-4.2-ha925a31_0\Library\bin'+r'\\'
-directory_animation=r'C:\Users\Franz Liszt\Miniconda3\envs\Bayesian_project\Lib\site-packages'+r'\\'
+directory_ffmpeg=r'set here the directory to ffmpeg.exe'+r'\\'
+directory_animation=r'set here the directory in which to save the animation'+r'\\'
 
 num_train=20
 L1=2
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     '''
     Yes, I know, it could have been done more neatly using numpy arrays and not appending a list,
-    but since it doesn't cause any problem, I left i it this way
+    but since it doesn't cause any problem, I left it this way
     '''
     y1_test = []
     y2_test = []
@@ -107,14 +107,10 @@ if __name__ == '__main__':
 
     plt.show()
 
-    im_ani.save(directory_animation+'robot_arm_sloppier.mp4', writer='ffmpeg')
+    im_ani.save(directory_animation+'robot_arm.mp4', writer='ffmpeg')
 
 
-#plt.plot([0,L1*cos(x1_test[i])],[0,L1*sin(x2_test[i])],'b',linewidth=7.0)
-#plt.plot([0,L1*cos(x1_test[i])],[0,L1*sin(x2_test[i])], 'ro')
-#plt.plot([L1*cos(x1_test[i]),y1_test[i]],[L1*sin(x2_test[i]),y2_test[i]],'b',linewidth=7.0)
-#plt.plot([L1*cos(x1_test[i]),y1_test[i]],[L1*sin(x2_test[i]),y2_test[i]], 'ro')
-#plt.show()
+
 
 
 
