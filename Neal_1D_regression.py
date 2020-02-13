@@ -25,14 +25,6 @@ but it doesn't change much in our case
 '''
 model=NN(L=L, H=H, I=I, O=O,centered=True)
 
-y = []
-
-for i in range(len(x)):
-    y.append(exp(sin(x[i])) + np.random.normal(0, 0.05))
-
-y = np.asarray(y)
-x = np.asarray(x)
-
 y=np.exp(sin(x))+np.random.normal(0,0.05,D)
 
 #The model accepts an input of dimension [x_dim,dataset_dim], so I add 1 dimension
