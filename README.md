@@ -2,16 +2,23 @@
 This repository contains all the code made by us during the project on "Bayesian deep learning" for the course in "Bayesian statistics".
 The repository contains:
 
--A moderately successful attempt at implementing Radford Neal Hamiltonian Montecarlo based Neural Network using Pystan, concerning these files:<\br> 
-  -*The file "Neal_initialize" should be run first as it compiles the model and dumps it on the directory (to set manually) through pikel.* <br/>
-  -*The file "Neal_Network" contains a class, which unpikels the model upon initialization, and contains a method to train (through pystan) given a dataset, to test using the weights it has sampled, to save the weights, and to measure the goodness of fit.*<\br>
-  -*Disclaimer: The model is really slow, a clear sign that Stan isn't optimized for these type of models, we persisted with the approach anyway for intellectual purposes.* <br/>
-  -*The file "Neal_1D" is a main implementing a 1 dimensional regression problem using the network and plotting the results.*<\br>
-  -*The file "robot_arm_problem" implements the multidimensional robot arm problem as described in Neal's book, and displays in the form of an animation of the arm * <br/>
+
+1. A moderately successful attempt at implementing Radford Neal Hamiltonian Montecarlo based Neural Network using Pystan, concerning these files:  <br/> 
+
+-*The file "Neal_initialize" should be run first as it compiles the model and dumps it on the directory (to set manually)                      through pikel.*  <br/>
+
+-*The file "Neal_Network" contains a class, which unpikels the model upon initialization, and contains a method to train (through pystan) given a dataset, to test using the weights it has sampled, to save the weights, and to measure the goodness of fit. Disclaimer: The model is really slow, a clear sign that Stan isn't optimized for these type of models, we persisted with the approach anyway for intellectual purposes.* <br/>
+
+-*The file "Neal_1D" is a main implementing a 1 dimensional regression problem using the network and plotting the results.* <\br>
+
+-*The file "robot_arm_problem" implements the multidimensional robot arm problem as described in Neal's book, and displays in the form of an animation of the arm* <br/>
+
 
 -An implementation of Neural Processes using Pytorch concerning these files:
-*"Attentive_Neural_Processes" contains the implementation of the eponymous algorythm which proved in the Garnelo implementation to be the best type of NP. It is however twice slower than Deepmind's implementation. The structure of the algorythm upon repeated checks seems to be the same as that of the blueprint, so the fallacy probably falls down to our poor experience with Pytorch, which may have resulted in us unwittingly implementing some incorrect procedure (especially with the custom loss function).* <br/>
-*"ANP_main" tests the class on a simple regression problem for a family of random sinusoidal functions* <br/>
+
+-*"Attentive_Neural_Processes" contains the implementation of the eponymous algorythm which proved in the Garnelo implementation to be the best type of NP. It is however twice slower than Deepmind's implementation. The structure of the algorythm upon repeated checks seems to be the same as that of the blueprint, so the fallacy probably falls down to our poor experience with Pytorch, which may have resulted in us unwittingly implementing some incorrect procedure (especially with the custom loss function).* <br/>
+
+-*"ANP_main" tests the class on a simple regression problem for a family of random sinusoidal functions* <br/>
 
 -An attempt at having one or both the networks play the italian game of cards of Briscola, involving these files (COMING SOON): <br/>
 *"briscola_tree" implements a decision tree to play briscola, it succeeds at playing at a basic level, every turn it runs simulations where it draws randomly a hand for the opponent from the cards still at play and plays additional hypothetic turns according to the parameter "depth".* <br/>
