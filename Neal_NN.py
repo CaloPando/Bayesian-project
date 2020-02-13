@@ -3,8 +3,8 @@ import pickle
 import numpy as np
 import random
 from scipy.stats import norm
-
-DIRECTORY=r'C:\Users\Franz Liszt\Miniconda3\envs\Bayesian_project\Lib\site-packages'
+#set here your directory
+DIRECTORY=r'your directory'
 
 class NN:
     def __init__(self, L, H, I, O, normalized=0, alpha=0.5, beta=1, centered=True):
