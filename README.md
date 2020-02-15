@@ -53,7 +53,7 @@ Here's a list:<br/>
 -*Tensorflow version 1.14: To install it, from Anaconda powershell "conda activate name_environment"  "pip install tensorflow==1.14"*<br/> 
 -*Pygame: This one too to download using pip from the Anaconda Powershell as explained for Tensorflow.*<br/> 
 -*Pystan: follow instructions at "https://pystan.readthedocs.io/en/latest/getting_started.html", especially download all the libraries mentioned (for Windows libpython and m2w64-toolchain)*<br/> 
--*Also used was ffmpeg to make an animation in "robot_arm_problem", it is downloadable at this link: "https://www.ffmpeg.org/download.html"*<br/> 
+-*Also used was ffmpeg to save an animation in "robot_arm_problem", it is downloadable at this link: "https://www.ffmpeg.org/download.html"*<br/> 
 
 Beware that almost all files require to manually set the directories where to save the results<br/> 
 
