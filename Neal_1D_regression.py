@@ -33,7 +33,7 @@ y = np.expand_dims(y, 0)
 num_epochs=1
 for epoch in range(num_epochs):
     #This line is necessary because there is apparently a flaw with how python multiprocessing was implemented in Windows
-    #Without it, is impossible to run multiple cores
+    #Without, it is impossible to run multiple cores
     if __name__ == '__main__':
         context = np.random.choice(list(range(D)), 30)
         context.sort()
