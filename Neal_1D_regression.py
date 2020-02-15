@@ -1,7 +1,5 @@
 import pystan
 import numpy as np
-from math import sin
-from math import exp
 from math import pi
 import matplotlib.pyplot as plt
 from Neal_NN import NN
@@ -25,7 +23,7 @@ but it doesn't change much in our case
 '''
 model=NN(L=L, H=H, I=I, O=O,centered=True)
 
-y=np.exp(sin(x))+np.random.normal(0,0.05,D)
+y=np.exp(np.sin(x))+np.random.normal(0,0.05,D)
 
 #The model accepts an input of dimension [x_dim,dataset_dim], so I add 1 dimension
 x= np.expand_dims(x, 0)
