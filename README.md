@@ -23,10 +23,10 @@ The repository contains:
       -*"ANP_main" tests the class on a simple regression problem for a family of random sinusoidal functions, eventually it leanrs to approximate the functions* <br/>
 
 3. Deepmind's implementation, utilized for most of the tests as it was more efficient, WE DON'T OWN ANYTHING ALL CREDITS GO TO THEM, we just modified the input to feed it the aforementioned example, and the MNIST, even if this didn't converge for us.<br/>
-This files are involved:
-      -*true_neural_processes*
-      -*neural_processes_main*
-      -*neural_processes_mnist*
+Theses files are involved:<br/>
+      -*true_neural_processes*<br/>
+      -*neural_processes_main*<br/>
+      -*neural_processes_mnist*<br/>
       
 
 4. A framework for training Neal's Network to play the italian game of Briscola (COMING SOON): <br/>
