@@ -161,7 +161,7 @@ class NN:
 
             mu_temp=list(np.mean(y_vec,0))
             mu.append(mu_temp)
-            sigma_temp = list(np.sqrt(np.var(y_vec,0)))
+            sigma_temp = list(np.std(y_vec,0))
             sigma.append(sigma_temp)
         mu = np.array(mu)
         sigma = np.array(sigma)
