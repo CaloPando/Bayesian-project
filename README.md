@@ -64,4 +64,10 @@ Our Stan based Neural Network succeeds at approximating functions where it has t
 
 ![alt text](https://github.com/CaloPando/Bayesian-project/blob/master/images/train_on_range2.png)
 
+I also performs nicely at a multidimensional problem, such as the robot arm problem, which was present in Neal's book:<br/>
+The network was trained on 20 points randomly sampled, the blue ellipse is the variance and it increases when close to the edges of the training interval as expected.
+
+![alt_text](https://raw.githubusercontent.com/CaloPando/Bayesian-project/master/images/robot_arm_sloppier.mp4)
+
+
 
