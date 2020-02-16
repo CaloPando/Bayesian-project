@@ -61,9 +61,12 @@ for epoch in range(num_epochs):
         disregards them completely and just adds the variance 
         '''
         plt.fill_between(x[0, :], mu[0,:] - 1.96 * sigma[0,:], mu[0,:] + 1.96 * sigma[0,:], facecolor=(0, 1, 1))
-        plt.plot(x[0, context], y[0, context], 'ro')
-        plt.plot(x[0, :], mu[0,:], 'b')
-        plt.plot(x[0, :], y[0, :], 'r')
+        context_plot, =plt.plot(x[0, context], y[0, context], 'ro')
+        prediction_plot, =plt.plot(x[0, :], mu[0,:], 'b')
+        real_plot, =plt.plot(x[0, :], y[0, :], 'r')
+        plt.legend([context_plot, prediction_plot, real_plot], ["context", "Prediction", "Real"])
+        plt.show()
+
         plt.show()
 
 
