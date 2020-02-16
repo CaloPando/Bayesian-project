@@ -60,6 +60,6 @@ Beware that almost all files require to manually set the directories where to sa
 
 RESULTS:<br/>
 -------------
-![alt text](https://github.com/CaloPando/Bayesian-project/edit/master/train_on_range2)
+![alt text](https://github.com/CaloPando/Bayesian-project/tree/master/images/train_on_range2)
 
 
