@@ -34,7 +34,10 @@ Theses files are involved:<br/>
 
       -*"briscola_tree" implements a decision tree to play briscola, it succeeds at playing at a basic level, every turn it runs simulations where it draws randomly a hand for the opponent from the cards still at play and plays additional hypothetic turns according to the parameter "depth".* <br/>
 
-      -*"Neal_briscola_train" trains Neal's network based on the matches between two trees of chosen parameters, each card is represented by two features as "number of cards still in the deck stronger than this card"/"number of cards still in the deck" and "value of the card"/"points still available" which we thought would synthesize aptly the information required, the NN does win some matches, but due to time constraints we couldn't focus on properly training it. the framework could be adapted to test other more conventional Deep Learning methods though (ours was an experiment after all).* <br/>
+      -*"Neal_briscola_train" trains Neal's network based on the matches between two trees of chosen parameters, each card is represented by two features as "number of cards still in the deck stronger than this card"/"number of cards still in the deck" and "value of the card"/"points still available" which we thought would synthesize aptly the information required.<br/> 
+      Two networks are trained, one for palying first , and one for playing in response (as this one takes 2 cards input, 4 features), the latter is trickier, as the Network needs to know wether he'll win the hand or not by playing a card, so if he'd lose it the features of the two cards played are multiplied by -1. <br/> 
+      It's an admittedly conceited setup but we couldn't afford to have two many features or it would have been too slow, and we believe that with more training and a more powerful algorythm very good results could have been achieved, but again the goal was just to show the potential of the model, not the briscola per se.<br/>
+      The NN does win some matches, but due to time constraints we couldn't focus on properly training it. the framework could be adapted to test other more conventional Deep Learning methods though (ours was an experiment after all).* <br/>
 
       -*"briscola" implements a charming user interface to test the AI.* <br/>
 
@@ -89,5 +92,19 @@ The network was trained on 20 points randomly sampled, the blue ellipse is the v
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/frame_robot_arm.PNG)
 
 
-The use of attention in Neural Processes improves performance dramatically: The first plot is from non attentive after 10000 iterations, the second one is from ANP after just 2000
+
+We also laid the foundations for the briscola problem, "briscola_bot" plays a very superficial briscola, it managed to collect a winning streak against the decision tree at a low simulations level. It was supposed to be the first step but time constraints didn't allow us to improve it by the deadline. Moreover the procedure of utilizing the sample mean as the parameter for the priors of the subsequent samples doesn't work really well. These Stan based networks work better if run on the whole dataset instead than updated gradually on chunks of it.<br/>
+The "briscola_bot" was just trained on 20 matches with just 80 iterations and is kind of promising, if often erratic, which points out that this framework could be used to test more optimized versions of NNs with better results in far less time.
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/https://github.com/CaloPando/Bayesian-project/blob/master/images/briscola_UI.PNG)
+
+As for Neural Processes, the use of attention improves the performance dramatically: The first plot is from non attentive after 10000 iterations, the second one is from ANP after just 2000
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/NP_nonattentive_10000.png)
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/ANP_2000.png)
+
+
+
+
 
