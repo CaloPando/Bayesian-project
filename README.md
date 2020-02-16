@@ -89,4 +89,5 @@ The network was trained on 20 points randomly sampled, the blue ellipse is the v
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/frame_robot_arm.PNG)
 
 
+The use of attention in Neural Processes improves performance dramatically: The first plot is from non attentive after 10000 iterations, the second one is from ANP after just 2000
 
