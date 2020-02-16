@@ -96,7 +96,7 @@ The network was trained on 20 points randomly sampled, the blue ellipse is the v
 We also laid the foundations for the briscola problem, "briscola_bot" plays a very superficial briscola, it managed to collect a winning streak against the decision tree at a low simulations level. It was supposed to be the first step but time constraints didn't allow us to improve it by the deadline. Moreover the procedure of utilizing the sample mean as the parameter for the priors of the subsequent samples doesn't work really well. These Stan based networks work better if run on the whole dataset instead than updated gradually on chunks of it.<br/>
 The "briscola_bot" was just trained on 20 matches with just 80 iterations and is kind of promising, if often erratic, which points out that this framework could be used to test more optimized versions of NNs with better results in far less time.
 
-![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/https://github.com/CaloPando/Bayesian-project/blob/master/images/briscola_UI.PNG)
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/briscola_UI.PNG)
 
 As for Neural Processes, the use of attention improves the performance dramatically: The first plot is from non attentive after 10000 iterations, the second one is from ANP after just 2000
 
