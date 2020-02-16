@@ -67,6 +67,18 @@ Our Stan based Neural Network succeeds at approximating functions where it has t
 
 ![alt text](https://github.com/CaloPando/Bayesian-project/blob/master/images/train_on_range2.png)
 
+It has more difficulty estimating random noise as it just regularizes the function. Therefore it estimates epistemic uncertainty more than that due to measurements (when the latter is excessive, that is)
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/regression_perturbed_high_noise.png)
+
+Sudden climbs constitute a challenge
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/delta_099.png)
+
+But lowering the adaptive delta to 0.8 it gets the job done
+
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/xcubo_delta08.png)
+
 It also performs nicely at a multidimensional problem, such as the robot arm problem, which was present in Neal's book:<br/>
 The network was trained on 20 points randomly sampled, the blue ellipse is the variance and it increases when close to the edges of the training interval as expected. It's the trained model "robot_arm_sloppy" (also "robot_arm_perfect" is trained with 80 points). 
 
