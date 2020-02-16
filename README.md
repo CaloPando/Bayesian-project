@@ -24,9 +24,10 @@ The repository contains:
 
 3. Deepmind's implementation, utilized for most of the tests as it was more efficient, WE DON'T OWN ANYTHING ALL CREDITS GO TO THEM, we just modified the input to feed it the aforementioned example, and the MNIST, even if this didn't converge for us.<br/>
 Theses files are involved:<br/>
-      -*true_neural_processes*<br/>
-      -*neural_processes_main*<br/>
-      -*neural_processes_mnist*<br/>
+      -*"true_neural_processes" contains the Garnelo implementation plus two functions we implemented to feed the examples of the family of random sinusoids and the same classification problem of "Neal_classification" only with random radius *<br/>
+      -*"neural_processes_main" implements the example of the random sinusoids*<br/>
+      -*"neural_processes_mnist" feeds the MNIST dataset to the Neural Processes*<br/>
+      -*"np_classification_main" implements the classification example*<br/>
       
 
 4. A framework for training Neal's Network to play the italian game of Briscola (COMING SOON): <br/>
@@ -67,7 +68,7 @@ Our Stan based Neural Network succeeds at approximating functions where it has t
 I also performs nicely at a multidimensional problem, such as the robot arm problem, which was present in Neal's book:<br/>
 The network was trained on 20 points randomly sampled, the blue ellipse is the variance and it increases when close to the edges of the training interval as expected.
 
-![alt_text](https://raw.githubusercontent.com/CaloPando/Bayesian-project/master/images/robot_arm_sloppier.mp4)
+![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/frame_robot_arm.PNG)
 
 
 
