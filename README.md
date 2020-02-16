@@ -5,11 +5,11 @@ The repository contains:
 
 1. A moderately successful attempt at implementing Radford Neal Hamiltonian Montecarlo based Neural Network using Pystan, concerning these files:  <br/> 
 
-    -*The file "Neal_initialize" should be run first as it compiles the model and dumps it on the directory (to set manually)                      through pikel.*  <br/>
+    -*The file "Neal_init" should be run first as it compiles the model and dumps it on the directory (to set manually)                      through pikel.*  <br/>
 
-    -*The file "Neal_Network" contains a class, which unpikels the model upon initialization, and contains a method to train (through pystan) given a dataset, to test using the weights it has sampled, to save the weights, and to measure the goodness of fit. Disclaimer: The model is really slow, a clear sign that Stan isn't optimized for these type of models, we persisted with the approach anyway for intellectual purposes.* <br/>
+    -*The file "Neal_NN" contains a class, which unpikels the model upon initialization, and contains a method to train (through pystan) given a dataset, to test using the weights it has sampled, to save the weights, and to measure the goodness of fit. Disclaimer: The model is really slow, a clear sign that Stan isn't optimized for these type of models, we persisted with the approach anyway for intellectual purposes.* <br/>
 
-    -*The file "Neal_1D" is a main implementing a 1 dimensional regression problem using the network and plotting the results.* <br/>
+    -*The file "Neal_1D_regression" is a main implementing a 1 dimensional regression problem using the network and plotting the results.* <br/>
 
     -*The file "robot_arm_problem" implements the multidimensional robot arm problem as described in Neal's book, and displays in the form of an animation of the arm* <br/>
     
