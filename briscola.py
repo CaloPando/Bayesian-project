@@ -5,6 +5,10 @@ import random
 from Neal_NN import NN
 from briscola_features import first_feature, second_feature
 
+'''
+This is the user interface to test the Network, once trained, it can also be used to train the decision trees.
+To play a card, click on it, than to play the hand press any key.
+'''
 
 bg=bt.tree()
 
@@ -13,13 +17,14 @@ pygame.init()
 neal_plays=True
 first_NN=NN( L=3, H=8, I=2, O=1, normalized=1, alpha=1, beta=1, centered=True)
 second_NN=NN( L=3, H=8, I=4, O=1, normalized=1, alpha=1, beta=1, centered=True)
-first_NN.load_parameters('first_NN4')
-second_NN.load_parameters('second_NN4')
+#This loads the trained models. That are two networks, one for when playing first, the other for playing second
+first_NN.load_parameters('briscola_bot1')
+second_NN.load_parameters('briscola_bot2')
 
 
 
-#I load the card images
-address="C:\\Users\Franz Liszt\Desktop\\università\Bayesian Statistics\\Project\Playing Cards\\Playing Cards\\PNG-cards-1.3"
+#Here set the directory where you put the images with the cards
+address="your directory"
 images=[]
 for card in bg.actual_deck:
     name_img=address+"\\"+card.name+"_of_"+card.suit+".png"
