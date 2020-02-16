@@ -40,6 +40,7 @@ model=NN(L=3, H=4, I=2, O=2, centered=True, normalized=1)
 if __name__ == '__main__':
     model.train(data_x[train,:].transpose(), data_y[train,:].transpose(), iter=num_iterations, warmup=num_warmup,
                 thin=2, delta=0.5, chains=4, cores=4)
+    #model.load_parameters('Neal_classification')
     mu, sigma = model.predict(x_pred=data_x.transpose())
     mu=mu.transpose()
     positives=[index for index, value in enumerate(mu) if value[1]>value[0]]
@@ -47,8 +48,9 @@ if __name__ == '__main__':
     plt.plot(x, y_up, 'k--')
     plt.plot(x, y_down, 'k--')
     plt.fill_between(x, y_down, y_up, color='#539ecd')
-    plt.scatter(data_x[positives, 0], data_x[positives, 1], marker='x',c='k')
-    plt.scatter(data_x[negatives, 0], data_x[negatives, 1], marker='o',c='r')
+    positives_plot =plt.scatter(data_x[positives, 0], data_x[positives, 1], marker='x',c='k')
+    negatives_plot =plt.scatter(data_x[negatives, 0], data_x[negatives, 1], marker='o',c='r')
+    plt.legend([positives_plot, negatives_plot], ["1","0"])
     plt.xlim([-1, 1])
     plt.ylim([-1, 1])
     plt.show()
