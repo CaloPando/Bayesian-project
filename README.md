@@ -20,7 +20,7 @@ The repository contains:
 
       -*"Attentive_Neural_Processes" contains the implementation of the eponymous algorythm which proved in the Garnelo implementation to be the best type of NP. It is however twice slower than Deepmind's implementation, and it yields subpar results and only by tweaking the cross-attention. The structure of the algorythm upon repeated checks seems to be the same as that of the blueprint, so the fault probably lies on our poor experience with Pytorch, which may have resulted in us unwittingly implementing some incorrect procedure (especially with the custom loss function).* <br/>
 
-      -*"ANP_main" tests the class on a simple regression problem for a family of random sinusoidal functions, eventually it leanrs to approximate the functions* <br/>
+      -*"NP_torch_main" tests the class on a simple regression problem for a family of random sinusoidal functions, eventually it leanrs to approximate the functions* <br/>
 
 3. Deepmind's implementation, utilized for most of the tests as it was more efficient, WE DON'T OWN ANYTHING ALL CREDITS GO TO THEM, we just modified the input to feed it a couple of example, and the MNIST, and did other minor changes, even if this didn't converge for us.<br/>
 the original can be found at "https://github.com/deepmind/neural-processes/blob/master/attentive_neural_process.ipynb".<br/>
