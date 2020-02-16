@@ -39,6 +39,8 @@ Theses files are involved:<br/>
       -*"briscola" implements a charming user interface to test the AI.* <br/>
 
       -*"cards" is the folder with the pictures of the cards. The directory where you put it is to be set at the start of the "briscola" file* <br/>
+      
+In the "images" folder are some plots, in the "trained_models" some trained models that can be loaded.
 
 
 ENVIRONMENT:<br/> 
@@ -65,8 +67,8 @@ Our Stan based Neural Network succeeds at approximating functions where it has t
 
 ![alt text](https://github.com/CaloPando/Bayesian-project/blob/master/images/train_on_range2.png)
 
-I also performs nicely at a multidimensional problem, such as the robot arm problem, which was present in Neal's book:<br/>
-The network was trained on 20 points randomly sampled, the blue ellipse is the variance and it increases when close to the edges of the training interval as expected.
+It also performs nicely at a multidimensional problem, such as the robot arm problem, which was present in Neal's book:<br/>
+The network was trained on 20 points randomly sampled, the blue ellipse is the variance and it increases when close to the edges of the training interval as expected. It's the trained model "robot_arm_sloppy" (also "robot_arm_perfect" is trained with 80 points). 
 
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/frame_robot_arm.PNG)
 
