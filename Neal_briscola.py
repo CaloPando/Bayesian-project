@@ -4,6 +4,13 @@ import random
 import numpy as np
 from briscola_features import first_feature, second_feature
 
+'''
+This is to train Neal's network on the matches played by the trees, every training_interval matches the network samples, than
+it plays a test match and records the result on a text file, and so on. Using long training intervals works better as we still
+haven't found how to effectively update the weights in different sampling sessions
+'''
+directory_file="insert the directory of the file where you want to record the scores"
+
 #Cards follow this encoding: x=(number cards that can beat the card)/(card still in deck)
 #and y=(points the card is worth)/(points still available)
 #fitted to (points won)/120
@@ -69,7 +76,7 @@ for game in range(train_games):
     y1_ = second_feature()
     y2_ = second_feature()
 
-    #Every 10 training games I do a test one, where the Network plays against the second tree
+    #Every tot training games I do a test one, where the Network plays against the second tree
     if game%testing_interval==0 and game!=0:
         testing=1
 
@@ -175,7 +182,7 @@ for game in range(train_games):
     #Training phase
     if testing:
         testing=0
-        file = open(r"C:\Users\Franz Liszt\Miniconda3\envs\Bayesian_project\Lib\site-packages\briscola_results\scores.txt", "a")
+        file = open(directory_file, "a")
         file.write(str(scores)+"\n")
         file.close()
 
@@ -212,6 +219,6 @@ for game in range(train_games):
             , y=np.expand_dims(z1_reply + z2_reply, 0), iter=80, warmup=50, thin=2, chains=1, cores=1)
 
 
-        first_NN.save_parameters('first_NN4')
-        second_NN.save_parameters('second_NN4')
+        first_NN.save_parameters('briscola_bot1')
+        second_NN.save_parameters('briscola_bot2')
 
