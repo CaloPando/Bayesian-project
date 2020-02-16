@@ -22,7 +22,8 @@ The repository contains:
 
       -*"ANP_main" tests the class on a simple regression problem for a family of random sinusoidal functions, eventually it leanrs to approximate the functions* <br/>
 
-3. Deepmind's implementation, utilized for most of the tests as it was more efficient, WE DON'T OWN ANYTHING ALL CREDITS GO TO THEM, we just modified the input to feed it the aforementioned example, and the MNIST, even if this didn't converge for us.<br/>
+3. Deepmind's implementation, utilized for most of the tests as it was more efficient, WE DON'T OWN ANYTHING ALL CREDITS GO TO THEM, we just modified the input to feed it a couple of example, and the MNIST, and did other minor changes, even if this didn't converge for us.<br/>
+the original can be found at "https://github.com/deepmind/neural-processes/blob/master/attentive_neural_process.ipynb".<br/>
 Theses files are involved:<br/>
       -*"true_neural_processes" contains the Garnelo implementation plus two functions we implemented to feed the examples of the family of random sinusoids and the same classification problem of "Neal_classification" only with random radius *<br/>
       -*"neural_processes_main" implements the example of the random sinusoids*<br/>
