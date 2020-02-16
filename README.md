@@ -35,12 +35,14 @@ Theses files are involved:<br/>
 
       -*"briscola_tree" implements a decision tree to play briscola, it succeeds at playing at a basic level, every turn it runs simulations where it draws randomly a hand for the opponent from the cards still at play and plays additional hypothetic turns according to the parameter "depth".* <br/>
 
-      -*"Neal_briscola_train" trains Neal's network based on the matches between two trees of chosen parameters, each card is represented by two features as "number of cards still in the deck stronger than this card"/"number of cards still in the deck" and "value of the card"/"points still available" which we thought would synthesize aptly the information required.<br/> 
+      -*"Neal_briscola" trains Neal's network based on the matches between two trees of chosen parameters, each card is represented by two features as "number of cards still in the deck stronger than this card"/"number of cards still in the deck" and "value of the card"/"points still available" which we thought would synthesize aptly the information required.<br/> 
       Two networks are trained, one for palying first , and one for playing in response (as this one takes 2 cards input, 4 features), the latter is trickier, as the Network needs to know wether he'll win the hand or not by playing a card, so if he'd lose it the features of the two cards played are multiplied by -1. <br/> 
       It's an admittedly conceited setup but we couldn't afford to have two many features or it would have been too slow, and we believe that with more training and a more powerful algorythm very good results could have been achieved, but again the goal was just to show the potential of the model, not the briscola per se.<br/>
       The NN does win some matches, but due to time constraints we couldn't focus on properly training it. the framework could be adapted to test other more conventional Deep Learning methods though (ours was an experiment after all).* <br/>
 
       -*"briscola" implements a charming user interface to test the AI.* <br/>
+      
+      -*"briscola_features" contains the functions that create the features for training*<br/>
 
       -*"cards" is the folder with the pictures of the cards. The directory where you put it is to be set at the start of the "briscola" file* <br/>
       
