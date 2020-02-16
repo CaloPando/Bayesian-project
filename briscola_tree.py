@@ -1,6 +1,12 @@
 import random
 import numpy as np
 
+'''
+This implements the decision trees and the subroutines necessary for playing briscola, such as create_deck, or play_hand that determines the 
+winner of a hand. The code can be convoluted because it involves many recursive functions (it's a tree) and applies many conditions
+checking to track who is calling the functions, if the first player or the second.
+I am sure it could have been written more neatly, but that is.
+'''
 
 class card:
     def __init__(self,suit,value,points,name):
@@ -15,8 +21,10 @@ class card:
 
 class tree():
 
-    def __init__(self,simulations=10,depth=2):
-
+    def __init__(self,simulations=10,depth=0):
+        
+        #This is the actual deck of class cards, the deck used otherwise is an array of indices of this deck, as it needs to be
+        #copied many times and an array of integers is far less expensive memorywise
         self.actual_deck=self.create_deck()
 
         self.match_is_on=True
@@ -29,12 +37,15 @@ class tree():
 
         self.briscola=[]
 
+        #Of course increasing this one scales computations exponentially, but gives some strategic qualities to the tree
         self.depth=depth
 
         self.simulations=simulations
-
+        
+        #To allow convergence of the recursion, depth has to be decreased by a rate>0 every time it's passed over to a lower branch
         self.depth_decrease_rate=2
-
+        
+        #Same applies to simulation
         self.simulation_decrease_rate = 3
 
         self.penalization=1
@@ -57,7 +68,8 @@ class tree():
 
         return deck
 
-
+    #This one is never used, it allows the tree to play against itself and print the scores, but in Neal_briscola we can have
+    #trees with different parameters play against each other
     def match(self):
 
 
@@ -92,7 +104,7 @@ class tree():
             self.num_matches+=1
 
 
-
+    #This one is to simulate future turns when making simulations with depth>0
     def turn(self,hand1,hand2,win,deck,simulations,depth,scores):
         if deck:
             if self.first_hand:
@@ -122,7 +134,7 @@ class tree():
 
         return scores, win
 
-
+    #This one is to play the hand
     def play_hand(self,first_card,second_card,win,scores):
 
         win=self.who_wins(first_card,second_card,win)
@@ -130,7 +142,9 @@ class tree():
         scores[win] += self.actual_deck[second_card].points
 
         return scores, win
-
+    
+    
+    #this is to determine who wins the hand
     def who_wins(self,first_card,second_card,win):
 
         if self.actual_deck[second_card].suit==self.actual_deck[first_card].suit:
@@ -142,7 +156,8 @@ class tree():
 
         return win
 
-
+    
+    #This is to decide the best move when playing first through recursion
     def decide_first_move(self,deck,hand1,hand2,win,simulations,depth):
 
         if simulations<=0:
@@ -185,7 +200,6 @@ class tree():
                                                  0,
                                                      depth-self.depth_decrease_rate)
 
-                #print(self.actual_deck[second_card].name+" of "+self.actual_deck[second_card].suit)
 
                 second_hand.remove(second_card)
 
@@ -213,7 +227,7 @@ class tree():
         return card_played
 
 
-
+    #This is to decide the best move when playing second through recursion
     def decide_response(self,first_card,deck,hand1,hand2,win,simulations,depth):
 
         if simulations<=0:
@@ -277,9 +291,9 @@ class tree():
         return card_played
 
 
-
+    
     def default_response(self,first_card,hand,win):
-        #this is the null case, the card that maximizes payoff is played
+        #this is the null case to stop the recursion, the card that maximizes payoff is played
         sim_scores=[]
         for second_card in hand:
             sim_scores.append(0)
@@ -288,7 +302,7 @@ class tree():
         return hand[np.argmax(sim_scores)]
 
     def default_first_play(self, hand, win):
-        # this is the null case, the card with the least points is played
+        #this is the null case to stop the recursion, the card with the least points is played
         points = []
         for first_card in hand:
             points.append(self.actual_deck[first_card].points)
