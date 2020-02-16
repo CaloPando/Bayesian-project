@@ -60,6 +60,8 @@ Beware that almost all files require to manually set the directories where to sa
 
 RESULTS:<br/>
 -------------
-![alt text](https://github.com/CaloPando/Bayesian-project/tree/master/images/train_on_range2)
+Our Stan based Neural Network succeeds at approximating functions where it has training points, and the variance swells where it has none to indicate its uncertainty.
+
+![alt text](https://github.com/CaloPando/Bayesian-project/blob/master/images/train_on_range2.png)
 
 
