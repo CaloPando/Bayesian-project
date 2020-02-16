@@ -58,4 +58,8 @@ Here's a list:<br/>
 Beware that almost all files require to manually set the directories where to save the results<br/> 
 
 
+RESULTS:<br/>
+-------------
+![alt text](https://github.com/CaloPando/Bayesian-project/edit/master/train_on_range2)
+
 
