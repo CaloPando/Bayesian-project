@@ -14,7 +14,9 @@ bg=bt.tree()
 
 pygame.init()
 
+#This determines wether you are playing the Network or the Tree
 neal_plays=True
+
 first_NN=NN( L=3, H=8, I=2, O=1, normalized=1, alpha=1, beta=1, centered=True)
 second_NN=NN( L=3, H=8, I=4, O=1, normalized=1, alpha=1, beta=1, centered=True)
 #This loads the trained models. That are two networks, one for when playing first, the other for playing second
