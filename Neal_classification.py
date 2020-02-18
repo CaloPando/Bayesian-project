@@ -39,7 +39,7 @@ model=NN(L=3, H=4, I=2, O=2, centered=True, normalized=1)
 
 if __name__ == '__main__':
     model.train(data_x[train,:].transpose(), data_y[train,:].transpose(), iter=num_iterations, warmup=num_warmup,
-                thin=2, delta=0.5, chains=4, cores=4)
+                thin=2, delta=0.99, chains=4, cores=4)
     #model.load_parameters('Neal_classification')
     mu, sigma = model.predict(x_pred=data_x.transpose())
     mu=mu.transpose()
