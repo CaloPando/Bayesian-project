@@ -77,15 +77,11 @@ It has more difficulty estimating random noise as it just regularizes the functi
 
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/regression_perturbed_high_noise.png)
 
-Sudden climbs constitute a challenge
-
-![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/delta_099.png)
-
-But lowering the adaptive delta to 0.8 it gets the job done
+The Network has no problem also dealing with fast increasing functions.
 
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/xcubo_delta08.png)
 
-Likewise the delta needs to be lowered further to 0.5, to be able to perform classification (because of the jump discontinuity from 0 to 1).
+This also applies to classification problems where it has to fit a step function in a circle (model trained in "trained_models").
 
 ![alt_text](https://github.com/CaloPando/Bayesian-project/blob/master/images/Neal_classification.png)
 
